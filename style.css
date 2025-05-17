@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper{
+    width: 70rem;
+    aspect-ratio: 1;
+    background-image: url(images/bg.jpg);
+    background-size: auto 70rem;
+    background-repeat: repeat-4;
+    border: 1rem solid red;
+    position: relative;
+    overflow: hidden;
+    animation: bganim 5s infinite linear;
+}
+
+@keyframes bganim {
+    0%{
+        background-position: center 0;
+    }
+    100%{
+        background-position: center 70;
+    }
+}
+
+.block{
+    width: 18rem;
+    aspect-ratio: 1;
+    background-color: rgb(51,184,184);
+    position: absolute;
+}
+
+.block-1{
+    top: 16rem;
+    right: 44rem;
+    transform-origin: bottom right;
+    animation: block1anim 5s infinite linear;
+}
+
+@keyframes block1anim {
+    0%{
+        transform: translateY(-38rem) rotateZ(0);
+        opacity: .5;
+    }
+    30%{
+        transform: translateY(0) rotateZ(0);
+    }
+    40%,45%{
+        transform: translateY(0) rotateZ(-180deg);
+        opacity: 1;
+    }
+    55%,100%{
+        transform: translateY(38rem) rotateZ(-180deg);
+        opacity: 0.5;
+    }
+}
+
+.block-2{
+    top: 16rem;
+    right: 8rem;
+    transform-origin: bottom left;
+    animation: block2anim 5s -2.5s infinite linear;
+}
+
+@keyframes block2anim {
+    0%{
+        transform: translateY(-38rem) rotateZ(0);
+        opacity: .5;
+    }
+    30%{
+        transform: translateY(0) rotateZ(0);
+    }
+    40%,45%{
+        transform: translateY(0) rotateZ(180deg);
+        opacity: 1;
+    }
+    55%,100%{
+        transform: translateY(38rem) rotateZ(180deg);
+        opacity: 0.5;
+    }
+}
+
+.ball{
+    width: 12rem;
+    aspect-ratio: 1;
+    background-color: rgb(255,118,118);
+    border-radius: 50%;
+    position: absolute;
+    left: 29rem;
+    top: 22rem;
+    animation: ballanim 2.5s -1.5s infinite linear;
+}
+
+@keyframes ballanim {
+    0%{
+        transform: translateY(-20rem) scale(0.8,1);
+    }
+    45%{
+        transform: translateY(0) scale(0.9,1);
+    }
+    50%{
+        transform: translateY(2rem) scale(1,0.7);
+    }
+    60%{
+        transform: translateY(-10rem) scale(0.9,1);
+    }
+    100%{
+        transform: translateY(-20rem) scale(0.8,1);
+    }
+}
